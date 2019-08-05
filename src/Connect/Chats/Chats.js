@@ -77,6 +77,8 @@ class Contacts extends Component {
           <h2>Recent</h2>
           <ContactList
             contacts={this.state.contacts.slice(0, 3)}
+            handlePrivateChat={this.props.handlePrivateChat}
+            url="chats"
           />
         </div>
         <div>
@@ -84,6 +86,8 @@ class Contacts extends Component {
           <ContactList
             heading=""
             contacts={this.state.contacts.slice(3)}
+            url="chats"
+            handlePrivateChat={this.props.handlePrivateChat}
           />
         </div>
       </div>

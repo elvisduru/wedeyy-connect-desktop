@@ -15,6 +15,10 @@ import cogwheelIcon from "../../images/cog.svg";
 import lockIcon from "../../images/lock.svg";
 import crossIcon from "../../images/cross.svg";
 
+import SimpleBar from 'simplebar-react';
+
+import 'simplebar/dist/simplebar.min.css';
+
 class ConnectHeader extends Component {
   state = {
     openMenu: false
@@ -61,49 +65,51 @@ class ConnectHeader extends Component {
             </div>
           </div>
         </div>
-        <ul className={styles.navlist}>
-          <li>
-            <img src={homeIcon} alt="Homepage" />
-            Homepage
-          </li>
-          <li>
-            <img src={userIcon} alt="Heritage" />
-            Heritage
-          </li>
-          <li>
-            <img src={earthIcon} alt="Diaspora" />
-            Diaspora
-          </li>
-          <li>
-            <img src={bubbleIcon} alt="Connect" />
-            Connect
-          </li>
-          <li>
-            <img src={bullhornIcon} alt="Bloggie" />
-            Bloggie
-          </li>
-          <li>
-            <img src={apartmentIcon} alt="Commerce Center" />
-            Commerce Center
-          </li>
-          <li>
-            <img src={questionIcon} alt="Help Center" />
-            Help Center
-          </li>
-          <li>
-            <img src={bookIcon} alt="Terms and Policy" />
-            Terms and Policy
-          </li>
-          <li>
-            <img src={cogwheelIcon} alt="Settings" />
-            Settings
-          </li>
-          <li>
-            <img src={lockIcon} alt="Log Out" />
-            Log Out
-          </li>
-        </ul>
-      </div>
+          <SimpleBar style={{height: '77vh'}}>
+          <ul className={styles.navlist}>
+              <li>
+                <img src={homeIcon} alt="Homepage" />
+                  Homepage
+              </li>
+                <li>
+                  <img src={userIcon} alt="Heritage" />
+                  Heritage
+              </li>
+                <li>
+                  <img src={earthIcon} alt="Diaspora" />
+                  Diaspora
+              </li>
+                <li>
+                  <img src={bubbleIcon} alt="Connect" />
+                  Connect
+              </li>
+                <li>
+                  <img src={bullhornIcon} alt="Bloggie" />
+                  Bloggie
+              </li>
+                <li>
+                  <img src={apartmentIcon} alt="Commerce Center" />
+                  Commerce Center
+              </li>
+                <li>
+                  <img src={questionIcon} alt="Help Center" />
+                  Help Center
+              </li>
+                <li>
+                  <img src={bookIcon} alt="Terms and Policy" />
+                  Terms and Policy
+              </li>
+                <li>
+                  <img src={cogwheelIcon} alt="Settings" />
+                  Settings
+              </li>
+                <li>
+                  <img src={lockIcon} alt="Log Out" />
+                  Log Out
+              </li>
+          </ul>
+          </SimpleBar>
+        </div>
     ) : null;
 
     return (

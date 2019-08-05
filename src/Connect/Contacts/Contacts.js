@@ -74,7 +74,7 @@ class Contacts extends Component {
       <div className={styles.Contacts}>
         <SearchBar placeholder="Find Contact" />
         <h2>Contacts</h2>
-        <ContactList heading="Contacts" contacts={this.state.contacts} />
+        <ContactList handlePrivateChat={this.props.handlePrivateChat} heading="Contacts" url='contacts' contacts={this.state.contacts} />
       </div>
     );
   }

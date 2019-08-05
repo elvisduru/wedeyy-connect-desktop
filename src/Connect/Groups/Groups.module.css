@@ -1,4 +1,4 @@
-.Groups > a {
+.Groups > button {
   width: 100%;
   font-family: heebomedium;
   color: #434343;
@@ -12,6 +12,7 @@
   margin-bottom: 20px;
   display: block;
   text-align: center;
+  cursor: pointer;
 }
 
 .Groups > h2 {
@@ -20,4 +21,5 @@
   color: #0d0d0d;
   margin-bottom: 15px;
   margin-top: 22px;
+  padding-left: 25px;
 }

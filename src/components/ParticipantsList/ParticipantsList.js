@@ -1,10 +1,12 @@
 import React from "react";
-import styles from "./ParticipantsList.module.css";
 import Participant from "./Participant/Participant";
+import SimpleBar from 'simplebar-react';
+
+import 'simplebar/dist/simplebar.min.css';
 
 const ParticipantsList = props => {
   return (
-    <div className={styles.ParticipantsList}>
+    <SimpleBar style={{height: '70vh'}}>
       {props.participants.map((participant, index) => (
         <Participant
           name={participant.name}
@@ -13,7 +15,7 @@ const ParticipantsList = props => {
           key={participant.name + index}
         />
       ))}
-    </div>
+    </SimpleBar>
   );
 };
 

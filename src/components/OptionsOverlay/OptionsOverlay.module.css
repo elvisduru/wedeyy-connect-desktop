@@ -1,25 +1,49 @@
-.OptionsOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
+.MoreOverlay {
+  position: absolute;
+  top: 63px;
+  /* left: 0; */
   right: 0;
-  bottom: 0;
-  height: 100vh;
-  background-color: rgba(13, 13, 13, 0.15);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  /* bottom: 0; */
+  /* height: 100vh; */
+  background-color: white;
+  /* display: flex;
+  flex-direction: column; */
+  /* justify-content: flex-end; */
   z-index: 1003;
+  box-shadow: 0 0 3px rgba(227, 227, 227, 1);
+}
+
+.ShareOverlay {
+  position: absolute;
+  bottom: 63px;
+  right: 60px;
+  background-color: white;
+  z-index: 1003;
+  box-shadow: 0 0 3px rgba(227, 227, 227, 1);
+}
+
+.SharedItemsMoreOverlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: white;
+  z-index: 1003;
+  box-shadow: 0 0 3px rgba(227, 227, 227, 1);
 }
 
 .content {
   background-color: white;
   max-height: 70%;
+  position: relative;
+  z-index: 2;
 }
 
 .options {
   height: 100%;
-  overflow-y: scroll;
+}
+
+.options > * {
+  cursor: pointer;
 }
 
 .header {
@@ -31,14 +55,20 @@
   font-size: 19px;
   color: rgba(52, 59, 59, 1);
   line-height: 23px;
-  box-shadow: 0 0 3px rgba(227, 227, 227, 1);
+  border-bottom: 1px solid rgba(245, 246, 246, 1);
 }
 
 .option {
   border-bottom: 1px solid rgba(245, 246, 246, 1);
-  padding: 22px 19px 15px;
+  padding: 14px 18px;
   display: flex;
   align-items: center;
+  font-size: 13px;
+  font-family: heeboregular;
+}
+
+.option:hover {
+  background-color: rgba(0, 0, 0, 0.03);
 }
 
 .option > div {

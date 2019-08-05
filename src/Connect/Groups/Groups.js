@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import styles from "./Groups.module.css";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import ContactList from "../../components/ContactList/ContactList";
@@ -35,10 +34,11 @@ class Groups extends Component {
       <div className={styles.Groups}>
         <SearchBar placeholder="Filter Group" />
         <h2>Groups</h2>
-        <Link to="/creategroup">CREATE NEW GROUP</Link>
+        <button onClick={this.props.handleCreateGroup}>CREATE NEW GROUP</button>
         <ContactList
           contacts={this.state.contacts}
           groupList
+          handlePrivateChat={this.props.handlePrivateChat}
         />
       </div>
     );

@@ -29,7 +29,7 @@ class Calls extends Component {
     return (
       <div className={styles.Calls}>
         <h2>Calls</h2>
-        <ContactList contacts={this.state.contacts} />
+        <ContactList handlePrivateChat={this.props.handlePrivateChat} contacts={this.state.contacts} />
       </div>
     );
   }

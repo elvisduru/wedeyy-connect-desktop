@@ -24,9 +24,12 @@
 }
 
 .main {
-  margin-top: 80px;
-  margin-bottom: 60px;
-  padding: 0 25px;
+  width: 25%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(208, 238, 233, 0.24);
+  box-shadow: 1px 0 6px rgba(0, 0, 0, 0.16);
 }
 
 @keyframes App-logo-spin {

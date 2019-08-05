@@ -2,26 +2,28 @@ import React, { Component } from "react";
 import styles from "./SharedItems.module.css";
 import crossIcon from "../../../../images/cross.svg";
 import img1 from "../../../../images/alice-donovan-rouse-171566.png";
-import img2 from "../../../../images/chaz-mcgregor-51043.png";
-import img3 from "../../../../images/philipp-kammerer-346387.png";
-import StarRatingComponent from "react-star-rating-component";
-import moreIcon from "../../../../images/more.svg";
-import linkIcon from "../../../../images/link.svg";
-import downloadIcon from "../../../../images/download.svg";
-import copyIcon from "../../../../images/select.svg";
-import trashIcon from "../../../../images/trash.svg";
-import shareIcon from "../../../../images/share.svg";
-import OptionsOverlay from "../../../../components/OptionsOverlay/OptionsOverlay";
+
 import ShareList from "../../../../components/ShareList/ShareList";
+
+import SimpleBar from 'simplebar-react';
+
+import 'simplebar/dist/simplebar.min.css';
+import SharedItem from "./SharedItem/SharedItem";
 
 class SharedItems extends Component {
   state = {
     openMoreOverlay: false,
-    openShareOverlay: false
-  };
-
-  goBack = () => {
-    this.props.history.goBack();
+    openShareOverlay: false,
+    sharedItems: [
+      {type: "image", src: img1},
+      { type: "file", fileName: "Temple Run Version 2.0.APK", fileSize: "32.03MB", fileType: "APK file"},
+      { type: "link", url: "https://m.youtube.com/watch/UGFi7v8"},
+      {
+        type: "contact",
+        name: "Kehinde John Omotoso",
+        rating: "3",
+      },
+    ]
   };
 
   handleMoreOverlay = e => {
@@ -47,25 +49,6 @@ class SharedItems extends Component {
 
 
   render() {
-    let moreOptions = [
-      { icon: linkIcon, name: "Open Link" },
-      { icon: downloadIcon, name: "Download" },
-      { icon: copyIcon, name: "Copy Link" },
-      { icon: trashIcon, name: "Delete just for me" },
-      { icon: trashIcon, name: "Delete for All" },
-      { icon: shareIcon, name: "Share" }
-    ];
-
-    let moreOverlay = this.state.openMoreOverlay ? (
-      <OptionsOverlay
-        heading="Options"
-        options={moreOptions}
-        click={this.handleMoreOverlay}
-        stopPropagation={this.stopEventPropagation}
-        openShareOverlay={this.openShareOverlay}
-      />
-    ) : null;
-
     let contacts = [
       {
         name: "Chas Mccawley",
@@ -106,69 +89,20 @@ class SharedItems extends Component {
     return (
       <div className={styles.SharedItems}>
         <div className={styles.header}>
-          <img src={crossIcon} alt="close" onClick={this.goBack} />
+          <img style={{cursor: 'pointer'}} src={crossIcon} alt="close" onClick={this.props.handleSharedItems} />
           <h3>Shared Items</h3>
         </div>
-        <div className={styles.contents}>
-          <div className={styles.image}>
-            <img
-              src={moreIcon}
-              alt="more"
-              className={styles.more}
-              onClick={this.handleMoreOverlay}
-            />
-            <img src={img1} alt="" />
-          </div>
-          <div className={styles.file}>
-            <img
-              src={moreIcon}
-              alt="more"
-              className={styles.more}
-              onClick={this.handleMoreOverlay}
-            />
-            <div>
-              <p>Temple Run Version 2.0.APK</p>
-              <small>APK file, 32.03MB</small>
-            </div>
-          </div>
-          <div className={styles.link}>
-            <img
-              src={moreIcon}
-              alt="more"
-              className={styles.more}
-              onClick={this.handleMoreOverlay}
-            />
-            <img src={img2} alt="" />
-            <small>https://m.youtube.com/watch/UGFi7v8</small>
-          </div>
-          <div className={styles.contact}>
-            <img
-              src={moreIcon}
-              alt="more"
-              className={styles.more}
-              onClick={this.handleMoreOverlay}
-            />
-            <img src={img3} alt="" />
-            <div>
-              <div className={styles.top}>
-                <h4>Kehinde John Omotoso</h4>
-                <StarRatingComponent
-                  name="rate"
-                  editing={false}
-                  starCount={5}
-                  value={3}
-                  starColor="#000000"
-                  emptyStarColor="#707070"
-                />
-              </div>
-              <div className={styles.bottom}>
-                <button>VIEW PROFILE</button>
-                <button>FOLLOW</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        {moreOverlay}
+        <SimpleBar style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'space-between',
+          padding: '20px 0',
+          height: '93%'
+        }}>
+          {this.state.sharedItems.map((content, index) => (
+            <SharedItem content={content} key={index} />
+          ))}
+        </SimpleBar>
         {shareOverlay}
       </div>
     );

@@ -1,4 +1,12 @@
-.ContactList > a {
-  margin-bottom: 28px;
+.ContactList {
+}
+
+.ContactList > div {
   display: block;
+  cursor: pointer;
+  padding: 10px 10px 10px 25px;
+}
+
+.ContactList > div:hover {
+  background-color: rgba(0, 0, 0, 0.06);
 }

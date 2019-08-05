@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
@@ -10,7 +10,7 @@
   background: white;
   height: 63px;
   box-shadow: 0 0 3px #e3e3e3;
-  padding: 10px;
+  padding: 10px 25px;
 }
 
 .Header > div {
@@ -18,11 +18,16 @@
   align-items: center;
 }
 
-.Header > div img {
+.Header > div:first-child img {
   width: 41px;
   height: 41px;
   border-radius: 50%;
   margin-right: 10px;
+}
+
+.Header > div:last-child > * {
+  margin-left: 25px;
+  cursor: pointer;
 }
 
 .Header > div h3 {
@@ -42,17 +47,21 @@
   width: 21px;
 }
 
+.chatWrapper {
+  padding: 0 100px;
+}
+
 .footer {
   display: flex;
   align-items: center;
-  position: fixed;
+  position: sticky;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 101;
   background: white;
   height: 63px;
-  padding: 10px 6px;
+  padding: 10px 25px;
   box-shadow: 0 0 3px #e3e3e3;
 }
 
@@ -71,9 +80,10 @@
 
 .footer .controls {
   position: absolute;
-  right: 20px;
+  right: 45px;
 }
 
 .footer .controls > * {
   margin-left: 20px;
+  cursor: pointer;
 }

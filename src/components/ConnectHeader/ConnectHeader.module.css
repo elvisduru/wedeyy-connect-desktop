@@ -4,12 +4,12 @@
   align-items: center;
   height: 63px;
   padding: 10px 25px;
-  box-shadow: 0 0 3px #e3e3e3;
-  position: fixed;
+  /* box-shadow: 0 0 3px #e3e3e3; */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  position: static;
   top: 0;
   left: 0;
   right: 0;
-  background: white;
   z-index: 1000;
 }
 
@@ -31,18 +31,25 @@
   width: 30px;
 }
 
+.menuIcon:hover, .closeIcon:hover {
+  cursor: pointer;
+}
+
 .menu {
   display: flex;
   flex-direction: column;
   position: fixed;
   top: 63px;
-  bottom: 0;
   left: 0;
-  right: 0;
+  width: 25vw;
   background-color: white;
   z-index: 1001;
   box-shadow: inset 0 0 3px #e3e3e3;
   animation: slideup 0.3s ease-out;
+}
+
+.menu :global(.simplebar-content) {
+  height: 100%;
 }
 
 .profileCard {
@@ -93,18 +100,31 @@
 
 .navlist {
   margin-top: 29px;
-  padding: 0 17px;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .navlist li {
-  margin-bottom: 38px;
+  /* margin-bottom: 38px; */
   display: flex;
   align-items: center;
   color: #434343;
   font-size: 16px;
   line-height: 24px;
   font-family: heebolight;
+  cursor: pointer;
+  height: 50px;
+  padding: 10px 15px;
+  margin-left: 15px;
+  margin-right: auto;
+}
+
+.navlist li:hover {
+  background-color: rgba(208, 238, 233, 0.24);
+  border-radius: 40px;
 }
 
 .navlist li img {
@@ -113,9 +133,9 @@
 
 @keyframes slideup {
   0% {
-    transform: translateY(100vh);
+    transform: translateX(-25vw);
   }
   100% {
-    transform: translateY(calc(0vh));
+    transform: translateX(0vw);
   }
 }
