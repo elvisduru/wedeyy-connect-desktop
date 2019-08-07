@@ -1,8 +1,9 @@
 .MoreOverlay {
   position: absolute;
-  top: 63px;
+  top: 30px;
   /* left: 0; */
-  right: 0;
+  right: 10px;
+  width: 185px;
   /* bottom: 0; */
   /* height: 100vh; */
   background-color: white;

@@ -12,6 +12,8 @@ import PrivateChat from "./Connect/Chats/PrivateChat/PrivateChat";
 import VideoCall from "./Connect/Chats/PrivateChat/VideoCall/VideoCall";
 import VoiceCall from "./Connect/Chats/PrivateChat/VoiceCall/VoiceCall";
 
+import groupChatImg from './images/group_chat.svg';
+
 import SimpleBar from 'simplebar-react';
 
 import 'simplebar/dist/simplebar.min.css';
@@ -59,13 +61,19 @@ class App extends Component {
         lastSeen={this.state.lastSeen} 
         username={this.state.username} 
         avatar={this.state.avatar} />
-    ) : null;
+    ) : (
+      <div className="intro">
+        <img src={groupChatImg} alt=""/>
+        <h1>Welcome Back, Elvis</h1>
+        <p>Search for someone to start chatting with or go to <br/> Contacts to see who is available</p>
+      </div>
+    );
 
     let createGroupOverlay = this.state.createGroupOpened ? (
       <CreateGroup handleCreateGroup={this.handleCreateGroup} />
     ) : null
     return (
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: 'flex', height: '100vh' }}>
         <BrowserRouter>
           <div className="main">
             <div>

@@ -25,6 +25,10 @@
   margin-right: 10px;
 }
 
+.Header > div:last-child {
+  position: relative;
+}
+
 .Header > div:last-child > * {
   margin-left: 25px;
   cursor: pointer;

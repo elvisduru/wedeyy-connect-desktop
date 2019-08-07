@@ -106,7 +106,7 @@ class PrivateChat extends Component {
       <OptionsOverlay
         heading="More"
         options={moreOptions}
-        click={this.handleMoreOverlay}
+        click={this.props.handleMoreOverlay}
         stopPropagation={this.stopEventPropagation}
         type="more"
         handleSharedItems={this.props.handleSharedItems}
@@ -183,6 +183,7 @@ class PrivateChat extends Component {
               <img className={styles.phone} src={phoneIcon} alt="call" />
             </Link>
             <img src={moreIcon} alt="more" onClick={this.props.handleMoreOverlay} />
+            {moreOverlay}
           </div>
         </div>
         <div className={styles.chatWrapper}>
@@ -201,7 +202,6 @@ class PrivateChat extends Component {
           </div>
           {optionsOverlay}
         </div>
-        {moreOverlay}
         {shareOverlay}
         {sharedItems}
       </div>
